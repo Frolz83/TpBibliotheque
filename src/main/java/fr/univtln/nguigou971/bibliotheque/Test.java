@@ -24,5 +24,6 @@ public class Test {
                 .addDocument(new BandeDessinnee("Chameau bleu","tata","michou"));
 
         System.out.println(bibliotheque.toString());
+        System.out.println("test");
     }
 }
