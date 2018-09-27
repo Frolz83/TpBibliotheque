@@ -10,10 +10,13 @@ public class OrdinateurPortable extends Materiel implements Empruntable {
     private Os os;
 
 
-    public OrdinateurPortable(String marque, String os){
+    public OrdinateurPortable(String marque, String os,String numeroSerie){
         super();
         this.marque = marque;
         this.os = Os.valueOf(os);
+        this.numeroSerie = numeroSerie;
+        emprunte = false;
+        enPanne =false;
     }
 
 
@@ -33,6 +36,11 @@ public class OrdinateurPortable extends Materiel implements Empruntable {
     @Override
     public void setDisponibilite(boolean disponibilite) {
         setEmprunte(!disponibilite);
+    }
+
+    @Override
+    public String getIdendificateur() {
+        return getNumeroSerie();
     }
 
 

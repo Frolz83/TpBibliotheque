@@ -6,6 +6,7 @@ public class Livre extends Volume implements Empruntable {
     private Boolean emprunte;
     public Livre(String titre, String auteur) {
         super(titre, auteur);
+        emprunte = false;
     }
 
     @Override
@@ -16,6 +17,11 @@ public class Livre extends Volume implements Empruntable {
     @Override
     public void setDisponibilite(boolean disponibilite) {
         setEmprunte(!disponibilite);
+    }
+
+    @Override
+    public String getIdendificateur() {
+        return getTitre();
     }
 
     @Override
