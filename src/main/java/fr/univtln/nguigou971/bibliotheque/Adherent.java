@@ -28,6 +28,10 @@ public class Adherent {
         this.emprunts = new HashMap<>();
     }
 
+    public int getNbEmprunt() {
+        return nbEmprunt;
+    }
+
     public void afficherEmprunts(){
         for(String key : emprunts.keySet()){
             emprunts.get(key);

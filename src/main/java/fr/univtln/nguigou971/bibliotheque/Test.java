@@ -31,7 +31,7 @@ public class Test {
         try {
             ad1.emprunter((Empruntable) bibliotheque.getDocument("Voyage"));
             ad1.emprunter((Empruntable) bibliotheque.getMateriel("1f5z998"));
-            ad1.afficherEmprunts();
+            bibliotheque.afficherFonds();
            /** System.out.println("Le livre est bien emprunté");
             ad1.rendre("Voyage");
             System.out.println("Le livre est bien rendu");
