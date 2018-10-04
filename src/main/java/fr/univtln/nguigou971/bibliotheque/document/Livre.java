@@ -26,7 +26,7 @@ public class Livre extends Volume implements Empruntable {
 
     @Override
     public String toString() {
-        return super.toString() + "Livre{" +
+        return super.toString() + "Ouvrage{" +
                 "emprunte=" + emprunte +
                 '}';
     }

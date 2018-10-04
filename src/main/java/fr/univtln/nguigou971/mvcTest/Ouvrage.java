@@ -1,9 +1,9 @@
 package fr.univtln.nguigou971.mvcTest;
 
-public class Livre {
+public class Ouvrage {
     private String titre;
 
-    public Livre(String titre){
+    public Ouvrage(String titre){
         this.titre=titre;
     }
 
@@ -13,5 +13,10 @@ public class Livre {
 
     public void setTitre(String titre) {
         this.titre = titre;
+    }
+
+    @Override
+    public String toString() {
+        return getTitre();
     }
 }
