@@ -24,8 +24,7 @@ public class BibliothequeVue extends JFrame implements Observer{
 
     private BibliothequeControleur bibliothequeControleur;
 
-    private boolean ajouter;
-    private boolean supprimer;
+    private boolean enabled;
 
 
 
@@ -81,12 +80,6 @@ public class BibliothequeVue extends JFrame implements Observer{
 
         boutonSupprimer.setEnabled(false);
 
-        ouvrages.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                boutonSupprimer.setEnabled(ouvrages.getSelectedIndex() ==0);
-            }
-        });
         boutonSupprimer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -113,9 +106,14 @@ public class BibliothequeVue extends JFrame implements Observer{
     @Override
     public void update(Observable o, Object arg) {
         ouvrages.removeAllItems();
+        int cpt=0;
         for (Ouvrage ouvrage:bibliothequeControleur.getBibliothequeModele().getLivres()) {
             ouvrages.addItem(ouvrage);
-
+            ++cpt;
         }
+        if(cpt ==0)
+            boutonSupprimer.setEnabled(false);
+        else
+            boutonSupprimer.setEnabled(true);
     }
 }
